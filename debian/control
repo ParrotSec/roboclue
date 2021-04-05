@@ -3,15 +3,16 @@ Section: utils
 Priority: optional
 Maintainer: Parrot Team <team@parrotsec.org>
 Uploaders: Nong Hoang Tu <dmknght@parrotsec.org>
-Build-Depends: debhelper-compat (= 13)
+Build-Depends: debhelper-compat (= 13), nim (>=1.4)
 Standards-Version: 4.5.1
 Homepage: https://nest.parrotsec.org/packages/tools/roboclue
-#Vcs-Browser: https://salsa.debian.org/debian/roboclue
-#Vcs-Git: https://salsa.debian.org/debian/roboclue.git
+Vcs-Browser: https://nest.parrotsec.org/packages/tools/roboclue
+Vcs-Git: https://nest.parrotsec.org/packages/tools/roboclue.git
 Rules-Requires-Root: no
 
 Package: roboclue
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Depends: libc6
+Description: Fast robots.txt auditor
+ roboclue is a lightweight tool written in Nim lang that auto reads
+ robots.txt from URL and check all possible links from it.
