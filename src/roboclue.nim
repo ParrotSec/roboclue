@@ -2,6 +2,7 @@ import httpclient
 import strutils
 import asyncdispatch
 import os
+import strformat
 
 const
   B_MAGENTA = "\e[95m"
@@ -10,18 +11,19 @@ const
   B_CYAN = "\e[96m"
   B_BLUE = "\e[94m"
   RESET = "\e[0m"
+  PROGRAM_NAME = "roboclue"
 
 
 proc banner() =
-  echo B_CYAN, "     PARSERO", RESET, " - ", B_GREEN, "Fast robots.txt audit", RESET
-  echo "Version: ", B_GREEN, "1.0", RESET
-  echo "Gitlab: ", B_BLUE, "https://nest.parrot.sh/packages/tools/parsero", RESET
-  echo "Author: ", B_MAGENTA, "Nong Hoang \"DmKnght\" Tu", RESET
-  echo "License: ", B_GREEN, "GPL-2\n"
+  echo fmt"{B_CYAN}      {PROGRAM_NAME} {RESET} - {B_GREEN} Fast robots.txt audit {RESET}"
+  echo fmt"Version:{B_GREEN} 1.0 {RESET}"
+  echo fmt"Author:{B_MAGENTA}  Nong Hoang Tu {RESET}"
+  echo fmt"Gitlab:{B_BLUE}  https://nest.parrot.sh/packages/tools/roboclue  {RESET}"
+  echo fmt"License:{B_GREEN} GPL-2"
 
 
 proc usage() =
-  echo B_RED, "Usage: ", B_CYAN, "parsero ", RESET, "[", B_BLUE, "-t delayTime", RESET, "] <", B_MAGENTA, "URL or -f urlList", RESET, ">"
+  echo fmt"{B_RED}Usage: {B_CYAN}{PROGRAM_NAME} {RESET}[{B_BLUE}-t delayTime{RESET}] <{B_MAGENTA}URL or -f urlList{RESET}>"
 
 
 proc help() =
